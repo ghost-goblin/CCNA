@@ -100,7 +100,8 @@ Router# show run | begin hostname (case sensitive regular expression)
 Router# show run | include/exclude interface
 Router# show run | section bgp
 Router# configure terminal (Global Configuration)
-Router(config)# ?Router(config)# hostname Router1
+Router(config)# ?
+Router(config)# hostname Router1
 Router(config)# do show ip interface brief (Show cmd at global config mode)
 Router(config)# interface fastEthernet 0/0
 Router(config-if)# exit (takes you back to global config)
