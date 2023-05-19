@@ -110,11 +110,13 @@ Router# conf tRouter(config)# hostname Router1Router1(config)# do show startup-c
 ## Layer 4 - The Transport Layer
 
 - Provides transparent layer of data between host and is resonsible for end-to-end *error recovery* and *flow control*
+- Flow control is the process of adjusting data from the sender to ensure effective delivery
 
-- Flow control is the process of adjusting data from the sender to ensure effective delivery. #### Session Multiplexing - The process by which a host is able to support multiple sessions simultaneously and manage the individual traffic streams over a single link. # TCP (Transport Control Protocol)
+#### Session Multiplexing 
+- The process by which a host is able to support multiple sessions simultaneously and manage the individual traffic streams over a single link
 
-
-# The TCP Three-Way Handshake
+# TCP (Transport Control Protocol)
+## The TCP Three-Way Handshake
 
 ```
    _______________                        |*\_/*|________  |  ___________  |                      ||_/-\_|______  |  | |           | |                      | |           | |  | |   0   0   | |        ---->         | |   0   0   | |  | |     -     | |        SYN           | |     -     | |  | |   \___/   | |        <---          | |   \___/   | |  | |___     ___| |        SYN ACK       | |___________| |  |_____|\_/|_____|        --->          |_______________|    _|__|/ \|_|_...........ACK............._|________|_   / ********** \                          / ********** \ /  ************  \                      /  ************  \--------------------                    --------------------$ tcp header --20 bytes 0                   1                   2                   3 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|       Source Port (16)        |    Destination Port (16)      |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|                    Sequence Number (32)                       |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|                Acknowledgment Number (32)                     |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+| Offset|  Res. |     Flags     |             Window            |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|            Checksum           |         Urgent Pointer        |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|                    Options                    |    Padding    |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
