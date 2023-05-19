@@ -104,3 +104,153 @@ Router# conf tRouter(config)# hostname Router1Router1(config)# do show startup-c
 - The running configuration is stored in RAM
 - Running config is loaded into RAM from the startup config when the device boots up
 
+
+# The Transport Layer Header, TCP & UDP
+
+## Layer 4 - The Transport Layer
+
+- Provides transparent layer of data between host and is resonsible for end-to-end *error recovery* and *flow control*
+
+- Flow control is the process of adjusting data from the sender to ensure effective delivery. #### Session Multiplexing - The process by which a host is able to support multiple sessions simultaneously and manage the individual traffic streams over a single link. # TCP (Transport Control Protocol)
+
+---
+
+# The TCP Three-Way Handshake
+
+```
+   _______________                        |*\_/*|________  |  ___________  |                      ||_/-\_|______  |  | |           | |                      | |           | |  | |   0   0   | |        ---->         | |   0   0   | |  | |     -     | |        SYN           | |     -     | |  | |   \___/   | |        <---          | |   \___/   | |  | |___     ___| |        SYN ACK       | |___________| |  |_____|\_/|_____|        --->          |_______________|    _|__|/ \|_|_...........ACK............._|________|_   / ********** \                          / ********** \ /  ************  \                      /  ************  \--------------------                    --------------------$ tcp header --20 bytes 0                   1                   2                   3 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|       Source Port (16)        |    Destination Port (16)      |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|                    Sequence Number (32)                       |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|                Acknowledgment Number (32)                     |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+| Offset|  Res. |     Flags     |             Window            |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|            Checksum           |         Urgent Pointer        |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|                    Options                    |    Padding    |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+```
+
+# UDP (User Datagram Protocol)
+
+
+
+```
+$ protocol udp --oddchar "-" --startchar "-" --endchar "-" 0                   1                   2                   3 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1-----------------------------------------------------------------|          Source Port          |        Destination Port       |-----------------------------------------------------------------|             Length            |            Checksum           |-----------------------------------------------------------------
+```
+
+
+# The Network Layer (Layer 3)
+
+- Responsible for *routing packets* to their destination and for **Quality of Service**
+- **Internet Protocol** is the most well known layer 3 protocol
+- A connectionless protocol with no acknowledgements at layer 3
+- Other layer 3 protocols include: **ICMP** (Internet Control Message Protocol / Ping) and **IPSec**
+- Layer 2 uses MAC Addresses and the logical seperation between networks is done at layer 3 i.se. subnetting
+
+```
+1518 bytes MTU$ protocol ip --bits 16 0                   1 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|Version|  IHL  |Type of Service|+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|          Total Length         |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|         Identification        |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|Flags|     Fragment Offset     |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|  Time to Live |    Protocol   |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|        Header Checksum        |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|                               |+         Source Address        +|                               |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|                               |+      Destination Address      +|                               |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|            Options            |+               +-+-+-+-+-+-+-+-+|               |    Padding    |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+```
+
+# Unicast, Broadcast and Multicast Traffic
+
+# IPv4 Address
+
+- 32-bits, 4 octets in dotted-descimal format, each octet is 8 bits long
+
+```
+ipconfig --ip address, subnet mask and default gateway --windowsifconfig --ip address and subnet mask                  --linuxip route --default gateway                             --linuxCISCO IOSRouter> enableRouter# show ip interface briefRouter# show interface
+```
+
+# Static vs. Automatic Addressing
+
+- Dynamic Host Configuration Protocol (DHCP) assigns IP addresses automatically to client machines
+- IP Addresses are usually set manually on servers, printers and network devices; routers and switches
+
+# IPv4 Classes
+
+## Class A
+
+- IP Range: **1.0.0.0** to **126.0.0.0**
+- First octet value range from 1 to 127
+- Subnet Mask: 255.0.0.0 (8 bits)
+- Number of Networks: 126
+- Number of Hosts per Network: 16,777,214 ## Class B
+- Range: **128.0.0.0** to **191.255.0.0**
+- First octet value range from 128 to 191
+- Subnet Mask: 255.255.0.0 (16 bits)
+- Number of Networks: 16,382
+- Number of Hosts per Network: 65,534
+- Class B Private APIPA Range: 169.254.0.0 to 169.254.255.255
+
+> Automatic Private IP Addressing (APIPA) is a feature on Microsoft Windows-based computers to automatically assign itself an IP address within this range if a Dynamic Host Configuration Protocol (DHCP) server is not available. A DHCP server is a device on a network that is responsible for assigning IP address to devices on the network.
+ 
+
+## Class C
+
+- Range: **192.0.0.0** to **223.255.255.0**
+- First octet value range from 192 to 223
+- Subnet Mask: 255.255.255.0 (24 bits)
+- Number of Networks: 2,097,150
+- Number of Hosts per Network: 254 ## Class D
+- Not allocated to hosts and are used for **multicasting**
+- Range: **224.0.0.0** to **239.255.255.255**
+- First octet value range from 224 to 239
+- Number of Hosts per Network: Multicasting ## Class E
+- Reserved for research purposes
+- Range: **240.0.0.0** to **255.255.255.255**
+- First octet value range from 240 to 255 ## Loopback Addresses
+- IP Range: **127.0.0.1** to **127.255.255.255**
+
+# RFC 1918 Private IPv4 Addressing
+
++ Assigned to hosts and not routable on the internet
++ Most enterprises today use RFC 1918 addresses and NAT
+
+---
+
+# The Data-Link Layer (Layer 2)
+
+- Frames are encoded and decoded into bits at Layer 2
+- Error detection and correction for the physical layer
+- Ethernet is the *layer 2* medium used on LAN networks
+
+## Media Access Control
+
+The 48-bit hexadecimal MAC address has two parts: 1. The first 24 bits is the OUI (Organizationally Unique Identifier) and identifies the manufacturer of the Ethernet Port, assigned by the IEEE 2. The last 24 bits are vendor assigned The burned in MAC address on every NIC port in the world is globally unique e.g. **00:50:56:C0:00:08**
+
+## How to find your MAC Address?
+
+```
+Cisco IOS:   show interfaceWindows:     ipconfig /allLinux:       ifconfig
+```
+
+## The Different Types of Data and their Layers
+
+1. Application = Data
+2. Transport - Segment
+3. Network - Packet
+4. Data-link - Frame
+
+# The Physical Layer (Layer 1)
+
+- OSI Layer 1 conveys the bit stream, electrical impulse, light or radio signals, though the network at the electrical and mechanical level
+- Provides the hardware means of sending and receiving data, including defining cables, interface cards and physical aspects
+
+## Ethernet LAN connections can be carried over:
+
+- Coaxial cable (no longer used)
+- Twisted copper pair cable
+- Fiber cable
+- Wireless
+
+> RJ-45 max length = 100m
+> 
+- **Cat 5** / **5e** - Gigabit Ethernet
+- **Cat 6** - 10 Gigabit Ethernet
+
+# Straight-Through vs Crossover UTP Cable
+
+- Copper UTP (Unshielded Twisted Pair) cables are commonly used to connect desktop computers to switches
+- Straight-Through connect end device of different types eg. PC or router to a switch
+- Crossover connect devices of the same type eg. 2 computers/2 switches
+- Modern switches support **Auto MDI-X**; receive and transmit signals are reconfigured automatically to yield the expected result
+
+# Fiber Optic Cables
+
+- Support longer distances or higher bandwidth requirements i.e. between separate buildings in a campus
+- Switch to switch connections in a building
+- **Single-mode** fiber optic cables: more expensive, long distances
+- **Multi-mode** fiber: less expensive
+- **Port** at the back of the Switch > **Transceiver** > **Fiber Optic Cable** connector
+- **PoE Switch**: use a power injector
