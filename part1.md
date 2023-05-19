@@ -26,12 +26,6 @@
 
 > P, D, N, T, S, P, A … Please Do Not Throw Sausage Pizza Away!
 
-#### The Different Types of Data and their Layers
-
-1. Application = Data
-2. Transport - Segment
-3. Network - Packet
-4. Data-link - Frame
 
 # The Upper OSI Layers
 
@@ -61,6 +55,22 @@
 - Defines services to segment, transfer and reassemble for individual communications between the end devices.
 - Breaks down large files into smaller segments that are less likely to incur transmission problems.
 #### The Transport Layer Header, TCP & UDP
+| Description                                                                               | Value                    | Additional Description       |
+|-------------------------------------------------------------------------------------------|--------------------------|------------------------------|
+|  Protocol                                                                                 | 0x0006 +                 | 06                           |
+| Source Address (IP)                                                                       | 0x0a0a + 0x0a02 +        | 10.10.10.2                   |
+| Destination Address (IP)                                                                  | 0x0a0a + 0x0a01 +        | 10.10.10.1                   |
+| TCP length (including the data part) in byte (no actual header field, has to be counted!) | 0x0014 +                 | 20 bytes (= 14 in hex)       |
+| Source + Destination Port                                                                 | 0x3039 + 0x0050 +        | 1234 and 80                  |
+| Sequence Number                                                                           | 0x0000 + 0x0000 +        | 00 00 00 00                  |
+| Acknowledgement Number                                                                    | 0x0000 + 0x0000 +        | 00 00 00 00                  |
+| Data Offset, Reserved, Flags, Window Size                                                 | 0x5002 + 0x7110 +        | 0101 000 000000010 and 71 10 |
+| Checksum (set to 0x0000 in calculation), Urgent Pointer                                   | 0x0000 + 0x0000 =        |                              |
+| Subtotal                                                                                  | 0x119cc                  |                              |
+| Removing the carryover                                                                    | 0x19cc + 0x0001 = 0x19cd |                              |
+| Negation with 0xffff                                                                      | 0xffff – 0x19cd =        |                              |
+| Checksum                                                                                  | 0xe632                   |                              |
+
 + The TCP Three-Way Handshake
 - Provides transparent layer of data between host and is resonsible for end-to-end *error recovery* and *flow control*
 - Flow control is the process of adjusting data from the sender to ensure effective delivery
