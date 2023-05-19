@@ -175,6 +175,10 @@ Router# show interface
 
 ## 2. The Data-Link Layer
 
+| Destination MAC Address | Source MAC Address | Protocol Type   |
+|-------------------------|--------------------|-----------------|
+| 00 0c 29 d3 be d6       | 00 0c 29 e0 c4 af  | 08 00  (= IPv4) |
+
 - **Source** and **Destination MAC Address** (layer 2 address)
 - How data is formatted for transmission and how to access to physical media is controlled.
 - Includes error detection and correction to ensure reliable delivery of data.
