@@ -73,3 +73,34 @@
 - Defines the specification needed for activating, maintaining and deactivating the physical link between end devices.
 - Voltage levels, physical data rates, maximum transmission distances, physical connectors etc.
 
+
+# Cisco Operating System
+
+## Internetwork Operating System (IOS)
+
+Cisco devices do not have a default IP address, so we need to set one up before we can connect to it over the network. We need a **console connection** to make the initial configurations including adding IP addresses.
+
+# Console Cable *(DB9 to RJ45)*
+
+### The newer cables USB to Mini-USB
+
+> Use “Ctrl-A” to move back to move back to the start of the line.
+> 
+
+```
+Cisco IOS CLI:=================================    ____ ____|    \(____|     `._____ ____|       _|___(____|     .'     |____/=================================Router> (The User Exec prompt)Router> ? (Ask for help :-\)Router> enable (Privileged Exec mode) /disable (to esc.)Router# show ?Router# show ip interface briefRouter# show running configRouter# show run int fast0/0Router# show run | begin hostname (case sensitive regular expression)Router# show run | include/exclude interfaceRouter# show run | section bgpRouter# configure terminal (Global Configuration)Router(config)# ?Router(config)# hostname Router1Router(config)# do show ip interface brief (Show cmd at global config mode)Router(config)# interface fastEthernet 0/0Router(config-if)# exit (takes you back to global config)Router(config-if)# end (takes you back to Privileged Exec mode)=================================
+```
+
+# Cisco IOS Configuration Management
+
+```
+Router# conf tRouter(config)# hostname Router1Router1(config)# do show startup-configRouter1(config)# do show running-configRouter1(config)# endRouter1# copy run startup-config (Privileged Exec mode)Router1# copy run flash:my-configRouter1# show flashRouter1# write erase startRouter1# copy flash:my-config startRouter1# copy run tftpRouter1# more flash:myconfig
+```
+
+# Configuration Storage Locations
+
+- The IOS image is stored in flash
+- The startup configuration is stored in NVRAM
+- The running configuration is stored in RAM
+- Running config is loaded into RAM from the startup config when the device boots up
+
