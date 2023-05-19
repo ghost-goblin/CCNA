@@ -57,11 +57,11 @@
 ## 4. The Transport Layer
 
 1. TCP (Transport Control Protocol) / UDP (User Datagram Protocol)
-+ The TCP Three-Way Handshake
 2. Port Number
 - Defines services to segment, transfer and reassemble for individual communications between the end devices.
 - Breaks down large files into smaller segments that are less likely to incur transmission problems.
 #### The Transport Layer Header, TCP & UDP
++ The TCP Three-Way Handshake
 - Provides transparent layer of data between host and is resonsible for end-to-end *error recovery* and *flow control*
 - Flow control is the process of adjusting data from the sender to ensure effective delivery
 
