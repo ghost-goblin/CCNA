@@ -255,7 +255,9 @@ Router# show interface
 
 ## Media Access Control
 
-The 48-bit hexadecimal MAC address has two parts: 1. The first 24 bits is the OUI (Organizationally Unique Identifier) and identifies the manufacturer of the Ethernet Port, assigned by the IEEE 2. The last 24 bits are vendor assigned The burned in MAC address on every NIC port in the world is globally unique e.g. **00:50:56:C0:00:08**
+The 48-bit hexadecimal MAC address has two parts: 
+1. The first 24 bits is the OUI (Organizationally Unique Identifier) and identifies the manufacturer of the Ethernet Port, assigned by the IEEE 
+2. The last 24 bits are vendor assigned The burned in MAC address on every NIC port in the world is globally unique e.g. **00:50:56:C0:00:08**
 
 ## How to find your MAC Address?
 ```
