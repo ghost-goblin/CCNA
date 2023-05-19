@@ -13,6 +13,7 @@
 - - -
 
 # OSI Open Systems Interconnect Model
+
 | LAYER        | TCP/IP STACK                       | Devices  | Definition                                                                   |
 |--------------|------------------------------------|----------|------------------------------------------------------------------------------|
 | Application  | Application (Data)                 |          | Represents data users encodes and controls the dialog                        |
@@ -22,3 +23,6 @@
 | Network      | Internet (Packet) IP Address       | Routers  | Provides logical addressing and determines the best path through the network |
 | Data Link    | Network Access (Frame) MAC Address | Switches | Controls the hardware devices and media that make up a network               |
 | Physical     |                                    | Hub      |                                                                              |
+
+> P, D, N, T, S, P, A … Please Do Not Throw Sausage Pizza Away!
+
