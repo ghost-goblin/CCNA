@@ -96,6 +96,18 @@
 #### IPv4 Address
 - 32-bits, 4 octets in dotted-decimal format, each octet is 8 bits long
 
+| Description                                             | Value                    | Additional Description |
+|---------------------------------------------------------|--------------------------|------------------------|
+| Version, IHL, Type of Service + Total Length            | 0x4500 + 0x0028 +        | –                      |
+| Identification + Flags, Fragment Offset                 | 0xabcd + 0x0000 +        | –                      |
+| TTL, Protocol + Header Checksum (0x0000 in calculation) | 0x4006 + 0x0000 +        | –                      |
+| Source Address (IP)                                     | 0x0a0a + 0x0a02 +        | 10.10.10.2             |
+| Destination Address (IP)                                | 0x0a0a + 0x0a01 =        | 10.10.10.1             |
+| Subtotal                                                | 0x15912                  |                        |
+| Removing the carryover                                  | 0x5912 + 0x0001 = 0x5913 |                        |
+| Negation with 0xffff                                    | 0xffff – 0x5913 =        |                        |
+| Header Checksum                                         | 0xa6ec                   |                        |
+
 ```
 ipconfig --ip address, subnet mask and default gateway 
 --windowsifconfig --ip address and subnet mask
