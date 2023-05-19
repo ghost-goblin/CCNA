@@ -183,11 +183,15 @@ ipconfig --ip address, subnet mask and default gateway --windowsifconfig --ip ad
 - First octet value range from 192 to 223
 - Subnet Mask: 255.255.255.0 (24 bits)
 - Number of Networks: 2,097,150
-- Number of Hosts per Network: 254 ## Class D
+- Number of Hosts per Network: 254 
+
+## Class D
 - Not allocated to hosts and are used for **multicasting**
 - Range: **224.0.0.0** to **239.255.255.255**
 - First octet value range from 224 to 239
-- Number of Hosts per Network: Multicasting ## Class E
+- Number of Hosts per Network: Multicasting 
+
+## Class E
 - Reserved for research purposes
 - Range: **240.0.0.0** to **255.255.255.255**
 - First octet value range from 240 to 255 ## Loopback Addresses
