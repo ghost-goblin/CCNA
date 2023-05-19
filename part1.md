@@ -195,6 +195,11 @@ ipconfig --ip address, subnet mask and default gateway --windowsifconfig --ip ad
 
 # RFC 1918 Private IPv4 Addressing
 
+| CLASS A                   | CLASS B                     | CLASS C                       |
+|---------------------------|-----------------------------|-------------------------------|
+| 10.0.0.0 - 10.255.255.255 | 172.16.0.0 - 172.31.255.255 | 192.168.0.0 - 192.168.255.255 |
+| 255.0.0.0                 | 255.240.0.0                 | 255.255.0.0                   |
+
 + Assigned to hosts and not routable on the internet
 + Most enterprises today use RFC 1918 addresses and NAT
 
