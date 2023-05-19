@@ -72,7 +72,6 @@
 ## 3. The Network Layer
 
 - **Source** and **Destination IP Address**.
-- Operates at Layer 3.
 - Provides connectivity and path selection between 2 host systems that may be located on geographically separated networks,
 - Manages connectivity of hosts by providing logical addressing.
 - Responsible for *routing packets* to their destination and for **Quality of Service**
