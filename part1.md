@@ -54,7 +54,7 @@
 2. Port Number
 - Defines services to segment, transfer and reassemble for individual communications between the end devices.
 - Breaks down large files into smaller segments that are less likely to incur transmission problems.
-#### The Transport Layer Header, TCP & UDP
+#### The Transport Layer Header, TCP
 | Description                                                                               | Value                    | Additional Description       |
 |-------------------------------------------------------------------------------------------|--------------------------|------------------------------|
 |  Protocol                                                                                 | 0x0006 +                 | 06                           |
@@ -72,6 +72,9 @@
 | Checksum                                                                                  | 0xe632                   |                              |
 
 + The TCP Three-Way Handshake
+   1. `[SYN]`
+   2. `[SYN, ACK]`
+   3. `[ACK]`
 - Provides transparent layer of data between host and is resonsible for end-to-end *error recovery* and *flow control*
 - Flow control is the process of adjusting data from the sender to ensure effective delivery
 
