@@ -145,7 +145,7 @@ $ protocol udp --oddchar "-" --startchar "-" --endchar "-" 0                   1
 
 # IPv4 Address
 
-- 32-bits, 4 octets in dotted-descimal format, each octet is 8 bits long
+- 32-bits, 4 octets in dotted-decimal format, each octet is 8 bits long
 
 ```
 ipconfig --ip address, subnet mask and default gateway --windowsifconfig --ip address and subnet mask                  --linuxip route --default gateway                             --linuxCISCO IOSRouter> enableRouter# show ip interface briefRouter# show interface
