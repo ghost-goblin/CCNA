@@ -194,7 +194,9 @@ ipconfig --ip address, subnet mask and default gateway --windowsifconfig --ip ad
 ## Class E
 - Reserved for research purposes
 - Range: **240.0.0.0** to **255.255.255.255**
-- First octet value range from 240 to 255 ## Loopback Addresses
+- First octet value range from 240 to 255 
+
+## Loopback Addresses
 - IP Range: **127.0.0.1** to **127.255.255.255**
 
 # RFC 1918 Private IPv4 Addressing
