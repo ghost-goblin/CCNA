@@ -164,7 +164,9 @@ ipconfig --ip address, subnet mask and default gateway --windowsifconfig --ip ad
 - First octet value range from 1 to 127
 - Subnet Mask: 255.0.0.0 (8 bits)
 - Number of Networks: 126
-- Number of Hosts per Network: 16,777,214 ## Class B
+- Number of Hosts per Network: 16,777,214 
+
+## Class B
 - Range: **128.0.0.0** to **191.255.0.0**
 - First octet value range from 128 to 191
 - Subnet Mask: 255.255.0.0 (16 bits)
