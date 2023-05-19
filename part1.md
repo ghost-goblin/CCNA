@@ -81,7 +81,7 @@
 - **Internet Protocol** is the most well known layer 3 protocol
 - A connectionless protocol with no acknowledgements at layer 3
 - Other layer 3 protocols include: **ICMP** (Internet Control Message Protocol / Ping) and **IPSec**
-- Layer 2 uses MAC Addresses and the logical seperation between networks is done at layer 3 i.se. subnetting
+- Layer 2 uses MAC Addresses and the logical seperation between networks is done at layer 3 i.e. subnetting
 ### Unicast, Broadcast and Multicast Traffic
 #### IPv4 Address
 - 32-bits, 4 octets in dotted-decimal format, each octet is 8 bits long
