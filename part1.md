@@ -88,13 +88,40 @@ Cisco devices do not have a default IP address, so we need to set one up before 
 > Use “Ctrl-A” to move back to move back to the start of the line
 
 ```
-Cisco IOS CLI:=================================    ____ ____|    \(____|     `._____ ____|       _|___(____|     .'     |____/=================================Router> (The User Exec prompt)Router> ? (Ask for help :-\)Router> enable (Privileged Exec mode) /disable (to esc.)Router# show ?Router# show ip interface briefRouter# show running configRouter# show run int fast0/0Router# show run | begin hostname (case sensitive regular expression)Router# show run | include/exclude interfaceRouter# show run | section bgpRouter# configure terminal (Global Configuration)Router(config)# ?Router(config)# hostname Router1Router(config)# do show ip interface brief (Show cmd at global config mode)Router(config)# interface fastEthernet 0/0Router(config-if)# exit (takes you back to global config)Router(config-if)# end (takes you back to Privileged Exec mode)=================================
+Cisco IOS CLI:
+Router> (The User Exec prompt)
+Router> ? (Ask for help :-\)
+Router> enable (Privileged Exec mode) /disable (to esc.)
+Router# show ?
+Router# show ip interface brief
+Router# show running config
+Router# show run int fast0/0
+Router# show run | begin hostname (case sensitive regular expression)
+Router# show run | include/exclude interface
+Router# show run | section bgp
+Router# configure terminal (Global Configuration)
+Router(config)# ?Router(config)# hostname Router1
+Router(config)# do show ip interface brief (Show cmd at global config mode)
+Router(config)# interface fastEthernet 0/0
+Router(config-if)# exit (takes you back to global config)
+Router(config-if)# end (takes you back to Privileged Exec mode)
 ```
 
 ## Cisco IOS Configuration Management
 
 ```
-Router# conf tRouter(config)# hostname Router1Router1(config)# do show startup-configRouter1(config)# do show running-configRouter1(config)# endRouter1# copy run startup-config (Privileged Exec mode)Router1# copy run flash:my-configRouter1# show flashRouter1# write erase startRouter1# copy flash:my-config startRouter1# copy run tftpRouter1# more flash:myconfig
+Router# conf t
+Router(config)# hostname Router1
+Router1(config)# do show startup-config
+Router1(config)# do show running-config
+Router1(config)# end
+Router1# copy run startup-config (Privileged Exec mode)
+Router1# copy run flash:my-config
+Router1# show flash
+Router1# write erase start
+Router1# copy flash:my-config start
+Router1# copy run tftp
+Router1# more flash:myconfig
 ```
 
 ## Configuration Storage Locations
@@ -150,7 +177,13 @@ $ protocol udp --oddchar "-" --startchar "-" --endchar "-" 0                   1
 - 32-bits, 4 octets in dotted-decimal format, each octet is 8 bits long
 
 ```
-ipconfig --ip address, subnet mask and default gateway --windowsifconfig --ip address and subnet mask                  --linuxip route --default gateway                             --linuxCISCO IOSRouter> enableRouter# show ip interface briefRouter# show interface
+ipconfig --ip address, subnet mask and default gateway 
+--windowsifconfig --ip address and subnet mask
+--linuxip route --default gateway --linux
+CISCO IOS:
+Router> enable
+Router# show ip interface brief
+Router# show interface
 ```
 
 # Static vs. Automatic Addressing
