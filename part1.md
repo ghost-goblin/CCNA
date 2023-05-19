@@ -75,8 +75,6 @@
 - Operates at Layer 3.
 - Provides connectivity and path selection between 2 host systems that may be located on geographically separated networks,
 - Manages connectivity of hosts by providing logical addressing.
-# The Network Layer (Layer 3)
-
 - Responsible for *routing packets* to their destination and for **Quality of Service**
 - **Internet Protocol** is the most well known layer 3 protocol
 - A connectionless protocol with no acknowledgements at layer 3
