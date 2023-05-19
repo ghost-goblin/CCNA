@@ -95,6 +95,7 @@
 ### Unicast, Broadcast and Multicast Traffic
 #### IPv4 Address
 - 32-bits, 4 octets in dotted-decimal format, each octet is 8 bits long
+- bytes = b'...' literals = a sequence of octets (integers between 0 and 255)
 
 | Description                                             | Value                    | Additional Description |
 |---------------------------------------------------------|--------------------------|------------------------|
