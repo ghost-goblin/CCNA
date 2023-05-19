@@ -13,7 +13,7 @@
 
 
 
-1. [Network Fundamentals](part1.md)
+1. ☎️ [Network Fundamentals](part1.md)
 2. [Network Access](part2.md)
 3. [IP Connectivity](part3.md)
 4. [IP Services](part4.md)
