@@ -14,15 +14,15 @@
 
 # OSI Open Systems Interconnect Model
 
-| LAYER        | TCP/IP STACK                       | Devices  | Definition                                                                   |
-|--------------|------------------------------------|----------|------------------------------------------------------------------------------|
-| Application  | Application (Data)                 |          | Represents data users encodes and controls the dialog                        |
-| Presentation |                                    |          |                                                                              |
-| Session      |                                    |          |                                                                              |
-| Transport    | Transport (Segment) TCP/UDP        |          | Supports communication between end devices across a diverse network          |
-| Network      | Internet (Packet) IP Address       | Routers  | Provides logical addressing and determines the best path through the network |
-| Data Link    | Network Access (Frame) MAC Address | Switches | Controls the hardware devices and media that make up a network               |
-| Physical     |                                    | Hub      |                                                                              |
+|   OSI model  | TCP/IP model | Protocol data unit (PDU) |                 Example                 | Equipment operating on given layer |      Domain      |
+|:------------:|:------------:|:------------------------:|:---------------------------------------:|:----------------------------------:|:----------------:|
+|  Application |  Application |                          |                   HTTP                  |              Firewall              |                  |
+| Presentation |              |                          |                                         |                                    |                  |
+|    Session   |              |                          |                                         |                                    |                  |
+|   Transport  |   Transport  |          segment         |                 TCP, UDP                |       Router w/NAT, firewall       |                  |
+|    Network   |    Network   |          packet          |                    IP                   |               router               |      Subnet      |
+|   Data-link  |   Data-link  |           frame          |             Ethernet, 802.11            |               switch               | Broadcast domain |
+|   Physical   |   Physical   |        bit/symbol        | UTP, single-mode fiber, multimode fiber |                 hub                | Collision domain |
 
 > P, D, N, T, S, P, A … Please Do Not Throw Sausage Pizza Away!
 
